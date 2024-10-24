@@ -723,10 +723,10 @@ a:visited {
   grid-column: center-start/center-end;
   padding-right: 0 !important;
   padding-left: 0 !important;
+  z-index: 99;
 }
 .trainers__title {
   text-align: center;
-  text-transform: uppercase;
   margin-bottom: 2rem;
   background-color: var(--color-tertiary-m);
   border-bottom-left-radius: 8rem;
@@ -761,10 +761,10 @@ a:visited {
      object-fit: cover;
   transition: all 0.5s ease-in-out;
 }
-.trainers__content--card:hover .trainers__content--card__img, .trainers__content--card:focus .trainers__content--card__img, .trainers__content--card:active .trainers__content--card__img {
+.trainers__content--card:hover .trainers__content--card__img, .trainers__content--card:active .trainers__content--card__img {
   filter: contrast(30%);
 }
-.trainers__content--card:hover .trainers__content--card__specialty, .trainers__content--card:focus .trainers__content--card__specialty, .trainers__content--card:active .trainers__content--card__specialty, .trainers__content--card:hover .trainers__content--card__name, .trainers__content--card:focus .trainers__content--card__name, .trainers__content--card:active .trainers__content--card__name {
+.trainers__content--card:hover .trainers__content--card__specialty, .trainers__content--card:active .trainers__content--card__specialty, .trainers__content--card:hover .trainers__content--card__name, .trainers__content--card:active .trainers__content--card__name {
   animation: name 1.5s linear forwards;
   z-index: 1;
 }
