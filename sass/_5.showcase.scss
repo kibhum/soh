@@ -82,16 +82,20 @@
         transition: all 0.5s ease-in-out;
       }
       a:hover:first-child::before,
+      a:focus:first-child::before,
       a:active:first-child::before,
       a:hover:last-child::before,
+      a:focus:last-child::before,
       a:active:last-child::before {
         transform: scale(1);
       }
       a:hover:first-child,
+      a:focus:first-child,
       a:active:first-child {
         color: var(--color-secondary);
       }
       a:hover:last-child,
+      a:focus:last-child,
       a:active:last-child {
         color: var(--color-tertiary);
       }

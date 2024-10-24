@@ -51,12 +51,15 @@
       }
     }
     &--card:hover .trainers__content--card__img,
+    &--card:focus .trainers__content--card__img,
     &--card:active .trainers__content--card__img {
       filter: contrast(30%);
     }
     &--card:hover .trainers__content--card__specialty,
+    &--card:focus .trainers__content--card__specialty,
     &--card:active .trainers__content--card__specialty,
     &--card:hover .trainers__content--card__name,
+    &--card:focus .trainers__content--card__name,
     &--card:active .trainers__content--card__name {
       animation: name 1.5s linear forwards;
       z-index: 1;
