@@ -10,6 +10,7 @@
   &__title {
     @extend %sec-heading;
     text-align: center;
+    text-transform: uppercase;
     margin-bottom: 2rem;
     background-color: var(--color-tertiary-m);
     border-bottom-left-radius: 8rem;
