@@ -1,0 +1,235 @@
+.features {
+  //   background-color: var(--color-quaternary);
+  grid-column: container-start / container-end;
+  background-image: url("../img/features/feature.png");
+  @extend %bg;
+  @extend %sec-padding;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+  place-content: center;
+
+  &__content {
+    display: grid;
+    grid-row-gap: 1vh;
+    background-color: var(--color-secondary-m);
+    padding: 2rem;
+
+    &--title {
+      @extend %sec-heading;
+      font-weight: font-weight(font-weight-bold) !important;
+      text-align: center;
+      text-transform: uppercase;
+      align-self: end;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      span {
+        position: absolute;
+        display: block;
+      }
+      span:nth-child(1) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.5rem;
+        background-image: linear-gradient(
+          90deg,
+          transparent,
+          var(--color-primary)
+        );
+        animation: border1 1s linear infinite;
+        animation-delay: 0s;
+      }
+      span:nth-child(3) {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.5rem;
+        background-image: linear-gradient(
+          270deg,
+          transparent,
+          var(--color-primary)
+        );
+        animation: border3 1s linear infinite;
+        animation-delay: 0s;
+      }
+      span:nth-child(2) {
+        top: 0;
+        right: 0;
+        width: 0.5rem;
+        height: 100%;
+        background-image: linear-gradient(
+          180deg,
+          transparent,
+          var(--color-primary)
+        );
+        animation: border2 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+      span:nth-child(4) {
+        top: 0;
+        left: 0;
+        width: 0.5rem;
+        height: 100%;
+        background-image: linear-gradient(
+          360deg,
+          transparent,
+          var(--color-primary)
+        );
+        animation: border4 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+    }
+    &--title::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--color-primary-m);
+      z-index: -1;
+      transform: scaleX(0);
+      transition: transform 0.5s ease-in-out;
+      transform-origin: right;
+    }
+    &:hover &--title::before,
+    &:active &--title::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    &--heading {
+      @extend %sec-h3;
+      
+      
+    }
+    &--subheading {
+      @extend %sec-h4;
+      text-align: center;
+    }
+    &--para {
+      @extend %sec-para;
+    }
+    &--details {
+      @extend %sec-para;
+    }
+    &--list {
+      @extend %sec-list;
+    }
+    &--link:link,
+    &--link:visited {
+      background: none;
+      place-self: start;
+      padding: 0.7rem 1.5rem;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      span {
+        display: block;
+        position: absolute;
+      }
+      span:first-child {
+        top: 0;
+        left: -100%;
+        height: 0.2rem;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, var(--color-primary));
+        transition: 0.5s;
+        transition-delay: 1s;
+      }
+      span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(180deg, transparent, var(--color-primary));
+        transition: 0.5s;
+        transition-delay: 0.75s;
+      }
+      span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        height: 0.2rem;
+        width: 100%;
+        background: linear-gradient(270deg, transparent, var(--color-primary));
+        transition: 0.7s;
+        transition-delay: 0.25s;
+      }
+      span:nth-child(4) {
+        top: 100%;
+        left: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(360deg, transparent, var(--color-primary));
+        transition: 0.5s;
+        transition-delay: 0s;
+      }
+    }
+    &--link:hover,
+    &--link:active {
+      background: var(--color-primary);
+      transition-delay: 1s;
+    }
+    &--link:hover span:first-child,
+    &--link:active span:first-child {
+      left: 100%;
+      transition-duration: 1s;
+      transition-delay: 0s;
+    }
+    &--link:hover span:nth-child(2),
+    &--link:active span:nth-child(2) {
+      top: 100%;
+      transition-duration: 1s;
+      transition-delay: 0.25s;
+    }
+    &--link:hover span:nth-child(3),
+    &--link:active span:nth-child(3) {
+      right: 100%;
+      transition-duration: 1s;
+      transition-delay: 0.5s;
+    }
+    &--link:hover span:nth-child(4),
+    &--link:active span:nth-child(4) {
+      top: -100%;
+      transition-duration: 1s;
+      transition-delay: 0.75s;
+    }
+  }
+}
+
+
+@keyframes border1 {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes border3 {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes border2 {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes border4 {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
